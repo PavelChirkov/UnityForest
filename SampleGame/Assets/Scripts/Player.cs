@@ -31,18 +31,11 @@ public class Player : MonoBehaviour
         dnGravity();
     }
     private void Update() {
-        /*_moveDirection = new Vector3(Input.GetAxis("Horizontal"),0f,Input.GetAxis("Vertical"));*/
-        moveDirection = new Vector3(variableJoystick.Horizontal, 0f, variableJoystick.Vertical);
-
+        moveDirection = new Vector3(-variableJoystick.Horizontal, 0f, -variableJoystick.Vertical);
         if (moveDirection != Vector3.zero)
         {
-            
             animator.Play("running");
-             gameObject.transform.forward = moveDirection;
-        }
-        else
-        {
-            /*animator.SetBool("idle", false);*/
+            gameObject.transform.forward = moveDirection;
         }
     }
 
